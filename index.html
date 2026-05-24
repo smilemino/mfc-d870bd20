@@ -104,10 +104,10 @@
   }
   function playSound(){[.0,.18,.42,.72,.95,1.25,1.55,1.78].forEach(clack)}
   function settle(el,value){
-    el.classList.remove('rolling');
-    void el.offsetWidth;
-    el.style.transition='transform .25s ease-out';
+    el.style.transition='none';
     el.style.transform='rotateX(-20deg) rotateY(25deg) '+FACE_ORIENT[value];
+    void el.offsetWidth;
+    el.classList.remove('rolling');
   }
   function roll(){
     if(rolling)return;rolling=true;
