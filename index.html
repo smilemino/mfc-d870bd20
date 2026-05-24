@@ -118,8 +118,7 @@
     setTimeout(()=>{settle(d1,v1);settle(d2,v2);rolling=false},2000);
   }
   function trigger(e){if(e.target.closest('a,button'))return;roll()}
-  document.addEventListener('click',trigger,{passive:true});
-  document.addEventListener('touchstart',trigger,{passive:true});
+  document.addEventListener('pointerdown',trigger);
   document.addEventListener('keydown',e=>{if(e.code==='Space'||e.code==='Enter'){e.preventDefault();roll()}});
   [d1,d2].forEach(el=>el.style.transform='rotateX(-20deg) rotateY(25deg) '+FACE_ORIENT[1]);
 })();
